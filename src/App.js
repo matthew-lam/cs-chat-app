@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TopLevelComponent from './toplevelcomponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	// Setup of app should be done here.
+
+	render() {
+		// Rendering components into the page
+		// TODO: - Render all components into the page into the correct place as seen in the wireframe example.
+		//	- 4 components: top header bar, add chat button, right panel for currently selected chat.
+
+		return(
+			<TopLevelComponent/>
+		)
+
+	}
+
+
 }
 
 export default App;
