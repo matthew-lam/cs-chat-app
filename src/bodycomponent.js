@@ -1,5 +1,5 @@
 import React from 'react';
-// Need to import both the chatHistory and chatWindow component to render in Fragments.
+// TODO: Need to import both the chatHistory and chatWindow component to render in Fragments.
 
 const chatComponentStyle = {
     // Aligning the components in BodyComponent using CSS.
@@ -23,10 +23,9 @@ class BodyComponent extends React.Component {
     //  and the chat window (right pane)
 
 	render() {
-        //  <AddChatButton callbackFromParent = {this.addChatButtonCallback}/>
 		return(
             <React.Fragment>
-                
+
             </React.Fragment>
 		)
 
