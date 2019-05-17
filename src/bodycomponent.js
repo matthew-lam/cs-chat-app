@@ -1,7 +1,20 @@
 import React from 'react';
+// Need to import both the chatHistory and chatWindow component to render in Fragments.
 
-const chatComponentStyles = {
+const chatComponentStyle = {
     // Aligning the components in BodyComponent using CSS.
+    display: 'flex',
+    flexWrap: 'wrap;',
+}
+
+const chatHistoryStyle = {
+    // Styling for the chat history component.
+    flex: '30%',
+}
+
+const chatWindowStyle = {
+    flex: '70%',
+    padding: '10px',
 }
 
 class BodyComponent extends React.Component {
@@ -13,7 +26,7 @@ class BodyComponent extends React.Component {
         //  <AddChatButton callbackFromParent = {this.addChatButtonCallback}/>
 		return(
             <React.Fragment>
-        
+                
             </React.Fragment>
 		)
 

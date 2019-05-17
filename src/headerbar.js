@@ -25,13 +25,18 @@ class HeaderBar extends React.Component {
     // HeaderBar located at the top of the page.
     // AddChatButton needs to be inside of here as a child to be rendered.
 
+    addChatButtonCallback = () => {
+        // Haven't decided the logic for where adding new chat window and chat history goes yet...
+        console.log("Callback test");
+    }
+
     render() {
         // TODO: complete rendering function.
         return(
 
                 <div style = {divStyle}> 
                 <h1 style = {textPaddingStyle}> An awesome chat app </h1> 
-                 <AddChatButton style = {buttonStyling}/> 
+                 <AddChatButton style = {buttonStyling} callbackFromParent = {this.addChatButtonCallback}/> 
                  </div>
             
         )
