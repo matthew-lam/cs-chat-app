@@ -19,8 +19,8 @@ class BodyComponent extends React.Component {
 		return(
             <React.Fragment>
                 <div style = {chatComponentStyle}>
-                <ChatHistoryComponent/>
-                <ChatWindowComponent/>
+                    <ChatHistoryComponent/>
+                    <ChatWindowComponent/>
                 </div>
             </React.Fragment>
 		)
