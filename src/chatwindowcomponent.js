@@ -17,10 +17,10 @@ const messageWindowStyle = {
 }
 
 const textBoxStyle = {
-    flex: '20%',
-    height: '10vh',
-    backgroundColor:'grey',
-    paddingLeft: '10px',
+    padding: '5px',
+    paddingRight: '15px',
+    display: 'flex',
+    flex: '1',
 }
 
 // This is in charge of all things to do with the chat window -- message boxes (both user and non-user messages) and text input.
@@ -39,12 +39,12 @@ class ChatWindowComponent extends React.Component {
                 <div style = {chatWindowStyle}>
                     <React.Fragment>
                         <div style = {messageWindowStyle}>
-                            <MessageBoxComponent/>
-                            <MessageBoxComponent/>
-                            <MessageBoxComponent/>
+                            <MessageBoxComponent isUserMessage = 'false' isEchoMessage = 'false' message = 'test'/>
+                            <MessageBoxComponent isUserMessage = 'true' isEchoMessage = 'false' message = 'hello'/>
+                            <MessageBoxComponent isUserMessage = 'false' isEchoMessage = 'true' message = 'test'/>
                         </div>
                         <div style = {textBoxStyle}>
-                            <p>world</p>
+                            <textarea style = {textBoxStyle}></textarea>
                         </div>
                     </React.Fragment>
                 </div>
