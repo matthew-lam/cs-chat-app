@@ -27,7 +27,7 @@ class HeaderBar extends React.Component {
 
     addChatButtonCallback = () => {
         // Haven't decided the logic for where adding new chat window and chat history goes yet...
-        console.log("Callback test");
+        console.log("Add chat button clicked.");
     }
 
     render() {
