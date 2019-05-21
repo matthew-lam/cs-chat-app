@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import MessageBoxComponent from './messageboxcomponent.js';
 
 const chatWindowStyle = {
@@ -16,22 +17,46 @@ const messageWindowStyle = {
     paddingLeft: '15px',
 }
 
-const textBoxStyle = {
+/* const textBoxStyle = {
     padding: '5px',
     paddingRight: '15px',
     display: 'flex',
     flex: '1',
-}
+} */
 
-// This is in charge of all things to do with the chat window -- message boxes (both user and non-user messages) and text input.
+const ChatWindowComponent = ({messages}) => (
 
-// How do we keep track and render all the messages?
+    // We want messages to be rendered in between the message window style div tags
+    
+    // Where messages is an array of stored message objects. message objects contain (timestamp, message, isUserMessage).
+        // MessageBoxComponent already is already a message object.
+        // So... only need to make an array of message objects here, which will be 'messages'.
+        // But where is the messages parameter going to come from.
 
-class ChatWindowComponent extends React.Component {
+        // Messages contain state --> how many messages there are (count of messages -> state differences).
+    
+        // Need to unpack and render all the message objects inside the messages array. Use a for loop to repteadly create MessageBoxComponents.
+
+    <React.Fragment>
+        <div style = {chatWindowStyle}>
+            <React.Fragment>
+            <div style = {messageWindowStyle}>
+
+            
+            </div>
+            </React.Fragment>
+        </div>
+    </React.Fragment>
+)
+
+
+/* class ChatWindowComponent extends React.Component {
 
     // Rendering messages and user input text field.
     // Add a nested fragment and another div style for the inner components of the chat window.
     // Layout alignment for inner components -- messages = flex: 70%, textinput = flex: 30%.
+
+    // Should this be stateless?
 
 	render() {
 		return( 
@@ -52,6 +77,6 @@ class ChatWindowComponent extends React.Component {
 		)
 
 	}
-}
+} */
 
 export default ChatWindowComponent;

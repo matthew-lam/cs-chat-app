@@ -15,7 +15,6 @@ class ChatHistoryComponent extends React.Component {
             //       
             <React.Fragment>
                 <div style = {chatHistoryStyle}>
-                    <p>test</p>
                 </div>
             </React.Fragment>
 		)

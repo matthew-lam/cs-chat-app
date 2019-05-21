@@ -10,6 +10,7 @@ const chatComponentStyle = {
     height: '80vh', // Height scaling doesn't work with percentage here for some reason, so using viewport height length instead.
 }
 
+
 class BodyComponent extends React.Component {
 
     // Body component is the intermediary component that contains the chat history (left pane)

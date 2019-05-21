@@ -9,8 +9,6 @@ class MessageBoxComponent extends React.Component {
     messageString = '';
 
     componentDidMount(){
-
-
         if(this.props.isEchoMessage === 'true'){
             this.messageString = 'You said: ' + this.props.message;
         }
@@ -19,11 +17,9 @@ class MessageBoxComponent extends React.Component {
         }
 
         this.forceUpdate();
-
     }
 
 	render() {
-
         // Hacky CSS because I'm not sure how to do it better. :(
 
         var messageBoxStyle = {
@@ -55,3 +51,9 @@ class MessageBoxComponent extends React.Component {
 }
 
 export default MessageBoxComponent;
+
+// Example of rendering a message box component:
+/*
+    // Create a react component passing the correct arguments as props:
+    <MessageBoxComponent isUserMessage = 'true' isEchoMessage = 'false' message = 'test'>
+*/
