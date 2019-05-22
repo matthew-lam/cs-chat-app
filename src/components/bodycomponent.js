@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatHistoryComponent from './chathistorycomponent'
-import ChatWindowComponent from './chatwindowcomponent'
+import ChatWindow from '../containers/chatWindow'
 // TODO: Need to import both the chatHistory and chatWindow component to render in Fragments.
 
 const chatComponentStyle = {
@@ -21,7 +21,7 @@ class BodyComponent extends React.Component {
             <React.Fragment>
                 <div style = {chatComponentStyle}>
                     <ChatHistoryComponent/>
-                    <ChatWindowComponent/>
+                    <ChatWindow/>
                 </div>
             </React.Fragment>
 		)

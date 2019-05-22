@@ -53,7 +53,6 @@ class MessageBoxComponent extends React.Component {
 export default MessageBoxComponent;
 
 // Example of rendering a message box component:
-/*
+
     // Create a react component passing the correct arguments as props:
-    <MessageBoxComponent isUserMessage = 'true' isEchoMessage = 'false' message = 'test'>
-*/
+    // <MessageBoxComponent isUserMessage = 'true' isEchoMessage = 'false' message = 'test'>

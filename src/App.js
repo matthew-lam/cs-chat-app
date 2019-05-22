@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.css';
-import TopLevelComponent from './toplevelcomponent';
+import HeaderBar from './components/headerbar';
+import BodyComponent from './components/bodycomponent';
+
+const divStyle = {
+    display: 'flex',
+    height: '100%',
+    flexFlow: 'column',
+}
 
 class App extends React.Component {
-	// Setup of app should be done here.
 
 	render() {
 		// Rendering components into the page
@@ -11,12 +17,16 @@ class App extends React.Component {
 		//	- 4 components: top header bar, add chat button, right panel for currently selected chat.
 
 		return(
-			<TopLevelComponent/>
+			<React.Fragment>
+                <div style = {divStyle}>
+                    <HeaderBar/>
+                    <BodyComponent/>  
+                </div>
+			</React.Fragment>
 		)
 
 	}
-
-
+	
 }
 
 export default App;

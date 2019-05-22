@@ -1,5 +1,5 @@
 import React from 'react';
-import AddChatButton from './addchatbutton';
+import AddChatButton from '../containers/addChatButton';
 
 // TODO: Figure out alignment for 'Add chat' button. (Just need to do a little bit of padding/margins)
 
@@ -25,18 +25,13 @@ class HeaderBar extends React.Component {
     // HeaderBar located at the top of the page.
     // AddChatButton needs to be inside of here as a child to be rendered.
 
-    addChatButtonCallback = () => {
-        // Haven't decided the logic for where adding new chat window and chat history goes yet...
-        console.log("Add chat button clicked.");
-    }
-
     render() {
         // TODO: complete rendering function.
         return(
 
                 <div style = {divStyle}> 
                 <h1 style = {textPaddingStyle}> An awesome chat app </h1> 
-                 <AddChatButton style = {buttonStyling} callbackFromParent = {this.addChatButtonCallback}/> 
+                 <AddChatButton style = {buttonStyling}/> 
                  </div>
             
         )
