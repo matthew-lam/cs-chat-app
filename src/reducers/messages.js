@@ -6,12 +6,13 @@ const messages = (state = [], action) => {
     switch (action.type) {
         case 'INIT_MESSAGE':
             return[
-                ...state,
-                {
-                    id: action.id,
-                    isUserMessage: action.isUserMessage,
-                    text: 'Welcome to the chat'
-                }
+                // ...state,
+                // {
+                //     id: action.id,
+                //     isUserMessage: action.isUserMessage,
+                //     text: 'Welcome to the chat'
+                // }
+                state[0] = { id: 0, isUserMessage: 'false', text: 'Welcome to the chat' }
             ]
         case 'ADD_MESSAGE':
             return[

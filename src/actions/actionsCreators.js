@@ -10,7 +10,7 @@ export const addMessage = text => ({
 
 export const initMessage = text => ({
     type: 'INIT_MESSAGE',
-    id: messageId++,
+    id: 0,
     isUserMessage: 'false',
     text
 })
