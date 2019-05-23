@@ -5,6 +5,7 @@ class TextBoxInput extends React.Component {
     handleOnClick(inputText) {
         this.props.addMessage(inputText);
         this.props.echoMessage(inputText);
+        document.getElementById("input_form").reset();
     }
 
 	render() {
