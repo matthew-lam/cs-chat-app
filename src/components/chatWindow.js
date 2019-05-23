@@ -1,5 +1,6 @@
 import React from 'react';
-import MessageBoxComponent from './messageboxcomponent.js';
+import MessageBoxComponent from './messageBox';
+import TextBoxInput from '../containers/textBoxInput';
 
 const chatWindowStyle = {
     // Styling for the chat history component.
@@ -16,12 +17,11 @@ const messageWindowStyle = {
     paddingLeft: '15px',
 }
 
-/* const textBoxStyle = {
+const textBoxStyle = {
     padding: '5px',
-    paddingRight: '15px',
     display: 'flex',
     flex: '1',
-} */
+}
 
 class ChatWindow extends React.Component {
 
@@ -35,6 +35,9 @@ class ChatWindow extends React.Component {
                             {
                                 this.props.messages.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} isEchoMessage = 'false' message ={message.text} key={i}/>)
                             }
+                        </div>
+                        <div style = {textBoxStyle}>
+                            <TextBoxInput/>
                         </div>
                     </React.Fragment>
                 </div>

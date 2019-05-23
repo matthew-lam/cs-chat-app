@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HeaderBar from './components/headerbar';
-import BodyComponent from './components/bodycomponent';
+import BodyComponent from './components/bodyComponent';
 
 const divStyle = {
     display: 'flex',
