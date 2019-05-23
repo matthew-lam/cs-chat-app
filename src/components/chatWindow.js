@@ -15,6 +15,7 @@ const messageWindowStyle = {
     backgroundColor: 'white',
     padding: '5px',
     paddingLeft: '15px',
+    overflowY: 'scroll',   
 }
 
 const textBoxStyle = {
