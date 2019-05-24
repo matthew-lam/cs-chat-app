@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatHistoryComponent from './chathistorycomponent'
+import ChatHistoryComponent from './chatHistory' // Remember to import the container.
 import ChatWindow from '../containers/chatWindow'
 // TODO: Need to import both the chatHistory and chatWindow component to render in Fragments.
 

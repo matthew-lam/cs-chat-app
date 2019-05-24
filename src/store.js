@@ -8,8 +8,6 @@ const defaultState = {
     ]
 }
 
-// console.log('defaultState', defaultState)
-
 const store = createStore(rootReducer, defaultState);
 window.store = store; // Used for the debugging purposes. To get state, use console and type in: window.store.getState()
 

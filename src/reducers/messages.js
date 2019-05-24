@@ -1,6 +1,6 @@
 // Where state pertains to the messages and message objects inside in a singular chat.
 
-// How do we reference the state passed into the messageReducer outside of this file?
+// TODO: Need to re-write the code based on each chat having a messages 'state' inside of it (basically just an array of messages anyway)
 
 const messages = (state = [], action) => {
     switch (action.type) {
