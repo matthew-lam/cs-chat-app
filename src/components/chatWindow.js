@@ -27,14 +27,14 @@ const textBoxStyle = {
 class ChatWindow extends React.Component {
 
 	render() {
+        console.log('update')
 		return( 
-            
             <React.Fragment>
                 <div style = {chatWindowStyle}>
                     <React.Fragment>
                         <div style = {messageWindowStyle}>
                             {
-                                this.props.messages.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} isEchoMessage = 'false' message ={message.text} key={i}/>)
+                                this.props.chats.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} isEchoMessage = 'false' message ={message.text} key={i}/>)
                             }
                         </div>
                         <div style = {textBoxStyle}>
@@ -44,7 +44,6 @@ class ChatWindow extends React.Component {
                 </div>
             </React.Fragment>
 		)
-
 	}
 }
 

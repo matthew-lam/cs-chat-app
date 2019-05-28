@@ -4,9 +4,8 @@ import * as actionCreators from '../actions/actionsCreators';
 import textBoxInput from '../components/textBoxInput';
 
 function mapStateToProps(state) {
-    console.log(state)
     return {
-		messages: state.messages
+		chats: state.chats
 	}
 } 
 

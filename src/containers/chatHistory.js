@@ -5,7 +5,7 @@ import chatHistory from '../components/chatHistory';
 
 function mapStateToProps(state) {
     return {
-		messages: state.messages
+		chats: state.chats
 	}
 } 
 

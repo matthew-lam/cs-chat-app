@@ -24,12 +24,12 @@ class TextBoxInput extends React.Component {
                     
                     <input type = {"text"} id = {"input_id"} defaultValue = {""} 
                     onKeyPress = {(event) => this.handleKeyPress(event)}
-                    disabled = {this.props.messages.length === 0 ? true: false}
+                    disabled = {this.props.chats.length === 0 ? true: false}
                     />
 
                     <input type = {"button"} value = {"Submit"} id = {"submit_button"} 
                     onClick = {() => this.handleOnClick(document.getElementById("input_id").value)} 
-                    disabled = {this.props.messages.length === 0 ? true: false} 
+                    disabled = {this.props.chats.length === 0 ? true: false} 
                 />
 
                 </form>

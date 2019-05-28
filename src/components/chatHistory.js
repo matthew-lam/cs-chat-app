@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatHistoryBox from './chatHistoryBox';
+import ChatHistoryBox from '../containers/chatHistoryBox';
 
 const chatHistoryStyle = {
     // Styling for the chat history component.
@@ -22,9 +22,7 @@ class ChatHistoryComponent extends React.Component {
                 </div>
             </React.Fragment>
 		)
-
 	}
-
 }
 
 export default ChatHistoryComponent;

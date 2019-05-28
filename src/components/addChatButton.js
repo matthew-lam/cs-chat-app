@@ -7,10 +7,12 @@ class AddChatButton extends React.Component {
     // AddChatButton creates a new chat -- it should spawn new components.
     //  Newly spawned components --> New chat instances (left pane) & new chat window (right pane).
 
+    // <button onClick = {this.props.initMessage} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
+
     render() {
         // TODO: complete rendering function.
         return (       
-            <button onClick = {this.props.initMessage} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
+            <button onClick = {this.props.addChatSession} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
                 Add chat
             </button>
         )

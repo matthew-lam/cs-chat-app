@@ -3,6 +3,8 @@ var chatId = 0;
 
 export const addMessage = text => ({
     type: 'ADD_MESSAGE',
+    chatID: chatId-1, // Don't really like how 'hacky' I've made the solution to this problem, but it works.
+    // Due to the way of keeping track of chatId variable works with spawning new chats, this must be done to ensure that message actions correspond properly.
     id: messageId++,
     isUserMessage: 'true',
     text
@@ -10,6 +12,7 @@ export const addMessage = text => ({
 
 export const echoMessage = text => ({
     type: 'ECHO_MESSAGE',
+    chatID: chatId-1,
     id: messageId++,
     isUserMessage: 'false',
     text
@@ -17,16 +20,24 @@ export const echoMessage = text => ({
 
 export const initMessage = text => ({
     type: 'INIT_MESSAGE',
+    chatID: chatId-1,
     id: 0,
     isUserMessage: 'false',
     text
 })
 
 export const spawnChat = () => ({
-    type: 'SPAWN_CHAT',
-    chatID: chatId++,
-    chatMessages: []
-})
+        type: 'SPAWN_CHAT',
+        chatID: chatId++,
+    }   
+)
+
+export function addChatSession() {
+    return dispatch => {
+        dispatch(spawnChat());
+        dispatch(initMessage());
+    }
+}
 
 export const deleteChat = () => ({
     type: 'DELETE_CHAT',
