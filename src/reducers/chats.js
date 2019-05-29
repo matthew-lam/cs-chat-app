@@ -1,69 +1,64 @@
-// Where state pertains to the messages and message objects inside in a singular chat.
-
-// TODO: Need to re-write the code based on each chat having a messages 'state' inside of it (basically just an array of messages anyway)
-
 const chats = (state = [], action) => {
-    console.log(action.type)
     switch (action.type) {
         case 'SPAWN_CHAT':
-            // This should be in charge of creating the chat history window box on the left.
-            return state
+            return [
+                ...state,
+                [
+                    action.chatID,
+                ]
+            ]
         case 'INIT_MESSAGE':
-            state.push([{ message_id: 0, isUserMessage: 'false', text: 'Welcome to the chat' }])
-            return state
+            console.log(action.chatID);
+            var state_initMessage = [...state];
+            console.log(state_initMessage)
+            state_initMessage[action.chatID].push(
+                {
+                    message_id: 0,
+                    isUserMessage: 'false',
+                    text: 'Welcome to the chat.'
+                }  
+            );
+            return [
+                ...state_initMessage
+            ]
         case 'ADD_MESSAGE':
-            // return[
-            //     ...state,
-            //     {
-            //         chat_id: action.chatID,
-            //         message_id: action.id,
-            //         isUserMessage: action.isUserMessage,
-            //         text: action.text
-            //     }
-            // ]
-            state[action.chatID].push(
+            var state_addMessage = [...state];
+            state_addMessage[action.chatID].push(
                 {
-                    message_id: action.id,
-                    isUserMessage: action.isUserMessage,
+                    message_id: 0,
+                    isUserMessage: 'false',
                     text: action.text
                 }
-            )
-            return(
-                state
-            )
-
+            );
+            return [
+                ...state_addMessage
+            ]
         case 'ECHO_MESSAGE':
-            // return[
-            //     ...state,
-            //     {
-            //         chat_id: action.chatID,
-            //         message_id: action.id,
-            //         isUserMessage: action.isUserMessage,
-            //         text: action.text
-            //     }
-            // ]
-            state[action.chatID].push(
+            var state_echoMessage = [...state];
+            state_echoMessage[action.chatID].push(
                 {
-                    message_id: action.id,
-                    isUserMessage: action.isUserMessage,
+                    message_id: 0,
+                    isUserMessage: 'false',
                     text: action.text
                 }
-            )
-            return(
-                state
-            )
-
+            );
+            return [
+                ...state_echoMessage
+            ]
         case 'DELETE_CHAT':
-            state.pop()
+            // Not too sure if this will update the state, but it SHOULD.
+            var clonedState_DC = state;
+            clonedState_DC.pop()
             return [
                 ...state
             ]
-
         case 'SELECT_CHAT':
             // Need to revisit this.
+            // Need to figure out how to update the state without mutating the store. This is so that react components will update.
+            console.log('selected chat: ' + action.selectedChat)
             return state
-
         default:
+            // This won't actually update the component.
             return state
     }
 }

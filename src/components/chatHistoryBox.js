@@ -13,11 +13,6 @@ const chatHistoryBoxStyle = {
     borderWidth: '1px',
     backgroundColor: 'white',
     overflow: 'inherit',
-}
-
-const textStyle = {
-    display: 'inline-block',
-    verticalAlign: 'middle',
     overflowX: 'hidden',
 }
 
@@ -34,11 +29,9 @@ class ChatHistoryBox extends React.Component {
 	render() {
 		return(  
             <React.Fragment>
-                <div style = {chatHistoryBoxStyle}>
+                <div style = {chatHistoryBoxStyle} id = {this.props.id} onClick = {() => this.props.selectChat(this.props.id)}>
                     <button style = {buttonStyle}>
-                        <div style = {textStyle}>
-                            <p>Testing</p>
-                        </div>
+                        <p>{this.props.text}</p>
                     </button>
                     <ChatHistoryDelete/>
                 </div>

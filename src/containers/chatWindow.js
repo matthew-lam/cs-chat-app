@@ -3,8 +3,7 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../actions/actionsCreators';
 import ChatWindow from '../components/chatWindow';
 
-function mapStateToProps(state) {
-	console.log(state.chats)	
+function mapStateToProps(state) {	
 	return {
 			chats: state.chats
 	}

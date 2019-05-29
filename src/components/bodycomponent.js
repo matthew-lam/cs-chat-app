@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatHistoryComponent from './chatHistory' // Remember to import the container.
+import ChatHistory from '../containers/chatHistory' // Remember to import the container.
 import ChatWindow from '../containers/chatWindow'
 // TODO: Need to import both the chatHistory and chatWindow component to render in Fragments.
 
@@ -20,7 +20,7 @@ class BodyComponent extends React.Component {
 		return(
             <React.Fragment>
                 <div style = {chatComponentStyle}>
-                    <ChatHistoryComponent/>
+                    <ChatHistory/>
                     <ChatWindow/>
                 </div>
             </React.Fragment>

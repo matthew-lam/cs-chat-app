@@ -46,6 +46,8 @@ export const deleteChat = () => ({
     // That would have to be done in the reducer. Just push the last element in the state to delete chat.
 })
 
-export const selectChat = () => ({
-    type: 'SELECT_CHAT'
+export const selectChat = id => ({
+    type: 'SELECT_CHAT',
+    selectedChat: id
+    // selectedChat and chatID should be different since chatID determines how many chat sessions there are active.
 })
