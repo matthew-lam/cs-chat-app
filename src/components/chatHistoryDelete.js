@@ -8,15 +8,14 @@ const deleteButtonStyle = {
 }
 
 class ChatHistoryDelete extends React.Component {
-	render() {
-		return(  
-            <React.Fragment>
-                <button style = {deleteButtonStyle}>
-                    X
-                </button>
-            </React.Fragment>
-		)
-	}
+
+    render() {
+        return (
+            <button style = {deleteButtonStyle} id = {this.props.id} onClick = {() => this.props.deleteChat(this.props.id)}>
+                <p>X</p>
+            </button>
+        )
+    }
 }
 
 export default ChatHistoryDelete;

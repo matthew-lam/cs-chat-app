@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatHistoryDelete from './chatHistoryDelete';
+import ChatHistoryDelete from '../containers/chatHistoryDelete';
 
 const chatHistoryBoxStyle = {
     // Styling for the chat history component.
@@ -27,11 +27,11 @@ class ChatHistoryBox extends React.Component {
 	render() {
 		return(  
             <React.Fragment>
-                <div style = {chatHistoryBoxStyle} id = {this.props.id} onClick = {() => this.props.selectChat(this.props.id)}>
-                    <button style = {buttonStyle}>
+                <div style = {chatHistoryBoxStyle}>
+                    <button style = {buttonStyle}  id = {this.props.id} onClick = {() => this.props.selectChat(this.props.id)}>
                         <p>{this.props.text}</p>
                     </button>
-                    <ChatHistoryDelete/>
+                    <ChatHistoryDelete id = {this.props.id}/>
                 </div>
             </React.Fragment>
 		)

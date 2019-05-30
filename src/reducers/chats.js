@@ -74,6 +74,7 @@ const chats = (state = initialState, action) => {
             }
         case 'DELETE_CHAT':
             // Need to revisit this.
+            console.log('properly connected and stuff : ' + action.selectedChatId)
             return state
         case 'SELECT_CHAT':
             let mutatedState = {}
