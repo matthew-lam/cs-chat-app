@@ -29,7 +29,7 @@ class ChatHistory extends React.Component {
             // e.g. chatBoxID = 1 === chatID = 1.
             <React.Fragment>
                 <div style = {chatHistoryStyle}>
-                    {this.props.chats.map((message, i) => <ChatHistoryBox id = {message[0]} text = {message[0]} key = {i}/>)}
+                    {this.props.chats.chats.map((message, i) => <ChatHistoryBox id = {message[0]} text = {message[0]} key = {i}/>)}
                 </div>
             </React.Fragment>
 		)

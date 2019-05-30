@@ -33,7 +33,7 @@ class ChatWindow extends React.Component {
                     <React.Fragment>
                         <div style = {messageWindowStyle}>
                             {
-                                this.props.chats.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} message ={message.text} key={i}/>)
+                                this.props.chats.chats.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} message ={message.text} key={i}/>)
                             }
                         </div>
                         <div style = {textBoxStyle}>

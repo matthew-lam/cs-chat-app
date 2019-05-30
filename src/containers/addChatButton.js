@@ -4,8 +4,10 @@ import * as actionCreators from '../actions/actionsCreators';
 import addChatButton from '../components/addChatButton';
 
 function mapStateToProps(state) {
+		console.log(state);
     return {
-		messages: state.messages
+			selectedChatId: state.chats.selectedChatId,
+			messages: state.messages
 	}
 } 
 

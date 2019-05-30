@@ -9,10 +9,14 @@ class AddChatButton extends React.Component {
 
     // <button onClick = {this.props.initMessage} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
 
+    addChatSessionOnClick = () => {
+        this.props.addChatSession('hello', this.props.selectedChatId)
+    }
+
     render() {
         // TODO: complete rendering function.
         return (       
-            <button onClick = {this.props.addChatSession} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
+            <button onClick = {this.addChatSessionOnClick} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
                 Add chat
             </button>
         )
