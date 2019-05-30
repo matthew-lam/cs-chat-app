@@ -23,9 +23,6 @@ const buttonStyle = {
 
 
 class ChatHistoryBox extends React.Component {
-
-    // Put props (of message that needs to be displayed) in place of the <p> tag.
-
 	render() {
 		return(  
             <React.Fragment>

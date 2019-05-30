@@ -5,7 +5,9 @@ import ChatWindow from '../components/chatWindow';
 
 function mapStateToProps(state) {	
 	return {
-			chats: state.chats
+			chats: state.chats,
+			selectedChatId: state.chats.selectedChatId,
+			messages: state.chats.messages
 	}
 } 
 

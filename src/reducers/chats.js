@@ -7,7 +7,6 @@ const initialState = {
 }
 
 const chats = (state = initialState, action) => {
-    console.log('STATE', state);
     switch (action.type) {
         case 'SPAWN_CHAT':
             return {
@@ -18,15 +17,15 @@ const chats = (state = initialState, action) => {
                     messageIds: []
                     }
                 ],
-                nextChatId: state.nextChatId + 1
+                nextChatId: state.nextChatId + 1,
+                selectedChatId: state.chats.length
             }
 
         case 'INIT_MESSAGE':
-            console.log(action.selectedChatId)
             return {
                 ...state,
                 chats: state.chats.map(
-                    chat => chat.chatID === action.selectedChatId ? 
+                    chat => chat.chatID === state.selectedChatId ? 
                         {...chat, messageIds: [...chat.messageIds, state.nextMessageId]} : chat
                 ),
                 messages: [
@@ -40,43 +39,46 @@ const chats = (state = initialState, action) => {
                 nextMessageId: state.nextMessageId + 1
             }
         case 'ADD_MESSAGE':
-            return state
-            // var state_addMessage = [...state];
-            // state_addMessage[action.chatID].push(
-            //     {
-            //         message_id: 0,
-            //         isUserMessage: 'false',
-            //         text: action.text
-            //     }
-            // );
-            // return [
-            //     ...state_addMessage
-            // ]
+            return {                
+                ...state,
+                chats: state.chats.map(
+                    chat => chat.chatID === state.selectedChatId ?
+                        { ...chat, messageIds: [...chat.messageIds, state.nextMessageId] } : chat
+                ),
+                messages: [
+                    ...state.messages,
+                    {
+                        message_id: state.nextMessageId,
+                        isUserMessage: 'false',
+                        text: action.text
+                    }
+                ],
+                nextMessageId: state.nextMessageId + 1
+            }
         case 'ECHO_MESSAGE':
-            return state
-            // var state_echoMessage = [...state];
-            // state_echoMessage[action.chatID].push(
-            //     {
-            //         message_id: 0,
-            //         isUserMessage: 'false',
-            //         text: action.text
-            //     }
-            // );
-            // return [
-            //     ...state_echoMessage
-            // ]
-        case 'DELETE_CHAT':
-            // Not too sure if this will update the state, but it SHOULD.
-            var clonedState_DC = state;
-            clonedState_DC.pop()
-            return [
-                ...state
-            ]
-        case 'SELECT_CHAT':
+        return {                
+            ...state,
+            chats: state.chats.map(
+                chat => chat.chatID === state.selectedChatId ?
+                    { ...chat, messageIds: [...chat.messageIds, state.nextMessageId] } : chat
+            ),
+            messages: [
+                ...state.messages,
+                {
+                    message_id: state.nextMessageId,
+                    isUserMessage: 'true',
+                    text: action.text
+                }
+            ],
+            nextMessageId: state.nextMessageId + 1
+        }
+    case 'DELETE_CHAT':
             // Need to revisit this.
-            // Need to figure out how to update the state without mutating the store. This is so that react components will update.
-            console.log('selected chat: ' + action.selectedChat)
             return state
+        case 'SELECT_CHAT':
+            let mutatedState = state
+            mutatedState.selectedChatId = action.selectedChat
+            return mutatedState
         default:
             // This won't actually update the component.
             return state

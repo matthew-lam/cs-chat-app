@@ -3,7 +3,7 @@ import React from 'react';
 class TextBoxInput extends React.Component {
 
     handleOnClick(inputText) {
-        this.props.addMessage(inputText);
+        this.props.addMessage(inputText, this.props.selectedChatId);
         this.props.echoMessage('You said: ' + inputText);
         document.getElementById("input_form").reset();
     }
