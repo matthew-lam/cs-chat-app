@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
 class exampleComponent extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        console.log(this.props);
-        return(
-            <div>Hello</div>
-        )
-    }
+  render() {
+    console.log(this.props);
+    return <div>Hello</div>;
+  }
 }
 
 export default exampleComponent;
