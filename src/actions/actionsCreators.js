@@ -32,8 +32,9 @@ export function addChatSession(selectedChatId) {
     }
 }
 
-export const deleteChat = () => ({
+export const deleteChat = id => ({
     type: 'DELETE_CHAT',
+    selectedChatId: id
     // Figure out way to remove a chat (to 'revert' back to a preceding state) from the current state.
     // That would have to be done in the reducer. Just push the last element in the state to delete chat.
 })

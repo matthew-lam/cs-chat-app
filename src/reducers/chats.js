@@ -13,8 +13,8 @@ const chats = (state = initialState, action) => {
                 ...state,
                 chats: [
                     ...state.chats, {
-                    chatID: state.nextChatId,
-                    messageIds: []
+                        chatID: state.nextChatId,
+                        messageIds: []
                     }
                 ],
                 nextChatId: state.nextChatId + 1,
@@ -25,8 +25,8 @@ const chats = (state = initialState, action) => {
             return {
                 ...state,
                 chats: state.chats.map(
-                    chat => chat.chatID === state.selectedChatId ? 
-                        {...chat, messageIds: [...chat.messageIds, state.nextMessageId]} : chat
+                    chat => chat.chatID === state.selectedChatId ?
+                        { ...chat, messageIds: [...chat.messageIds, state.nextMessageId] } : chat
                 ),
                 messages: [
                     ...state.messages,
@@ -39,7 +39,24 @@ const chats = (state = initialState, action) => {
                 nextMessageId: state.nextMessageId + 1
             }
         case 'ADD_MESSAGE':
-            return {                
+            return {
+                ...state,
+                chats: state.chats.map(
+                    chat => chat.chatID === state.selectedChatId ?
+                        { ...chat, messageIds: [...chat.messageIds, state.nextMessageId] } : chat
+                ),
+                messages: [
+                    ...state.messages,
+                    {
+                        message_id: state.nextMessageId,
+                        isUserMessage: 'true',
+                        text: action.text
+                    }
+                ],
+                nextMessageId: state.nextMessageId + 1
+            }
+        case 'ECHO_MESSAGE':
+            return {
                 ...state,
                 chats: state.chats.map(
                     chat => chat.chatID === state.selectedChatId ?
@@ -55,29 +72,14 @@ const chats = (state = initialState, action) => {
                 ],
                 nextMessageId: state.nextMessageId + 1
             }
-        case 'ECHO_MESSAGE':
-        return {                
-            ...state,
-            chats: state.chats.map(
-                chat => chat.chatID === state.selectedChatId ?
-                    { ...chat, messageIds: [...chat.messageIds, state.nextMessageId] } : chat
-            ),
-            messages: [
-                ...state.messages,
-                {
-                    message_id: state.nextMessageId,
-                    isUserMessage: 'true',
-                    text: action.text
-                }
-            ],
-            nextMessageId: state.nextMessageId + 1
-        }
-    case 'DELETE_CHAT':
+        case 'DELETE_CHAT':
             // Need to revisit this.
             return state
         case 'SELECT_CHAT':
-            let mutatedState = state
+            let mutatedState = {}
+            Object.assign(mutatedState, state)
             mutatedState.selectedChatId = action.selectedChat
+            console.log('Selected chat: ' + action.selectedChat)
             return mutatedState
         default:
             // This won't actually update the component.

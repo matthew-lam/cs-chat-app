@@ -25,15 +25,17 @@ const textBoxStyle = {
 }
 
 class ChatWindow extends React.Component {
-
 	render() {
-		return( 
+        console.log('updated'); // This doesn't update when select chat is called for some reason.
+        return( 
             <React.Fragment>
                 <div style = {chatWindowStyle}>
                     <React.Fragment>
                         <div style = {messageWindowStyle}>
                             {
-                                this.props.chats.chats.map((message, i) => <MessageBoxComponent isUserMessage = {message.isUserMessage} message ={message.text} key={i}/>)
+                                this.props.chats.chats.length > 0 ? 
+                                (this.props.chats.chats[this.props.selectedChatId].messageIds.map((message, i) => <MessageBoxComponent isUserMessage = {this.props.chats.messages[this.props.chats.chats[this.props.selectedChatId].messageIds[i]].isUserMessage} message = {this.props.chats.messages[this.props.chats.chats[this.props.selectedChatId].messageIds[i]].text} key = {i}/>)) 
+                                : null
                             }
                         </div>
                         <div style = {textBoxStyle}>

@@ -29,7 +29,7 @@ class TextBoxInput extends React.Component {
 
                     <input type = {"button"} value = {"Submit"} id = {"submit_button"} 
                     onClick = {() => this.handleOnClick(document.getElementById("input_id").value)} 
-                    disabled = {this.props.chats.length === 0 ? true: false} 
+                    disabled = {this.props.chats.chats.length === 0 ? true: false} 
                 />
 
                 </form>
