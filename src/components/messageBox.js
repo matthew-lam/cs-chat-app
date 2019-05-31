@@ -4,21 +4,6 @@ import React from 'react';
 
 class MessageBoxComponent extends React.Component {
 
-    // date = new Date();
-    // timestampString = this.date.toString();
-    messageString = '';
-
-    componentDidMount(){
-        if(this.props.isEchoMessage === 'true'){
-            this.messageString = 'You said: ' + this.props.message;
-        }
-        else{
-            this.messageString = this.props.message;
-        }
-
-        this.forceUpdate();
-    }
-
 	render() {
         // Hacky CSS because I'm not sure how to do it better. :(
 
@@ -44,15 +29,10 @@ class MessageBoxComponent extends React.Component {
 		return(
             <div style = {messageBoxStyle}>
                 Sent on {this.props.timeStamp}
-                <p>{this.messageString}</p>
+                <p>{(this.props.isEchoMessage === 'true' ? ('You said: ' + this.props.message) : this.props.message)}</p>
             </div>
 		)
 	}
 }
 
-export default MessageBoxComponent;
-
-// Example of rendering a message box component:
-
-    // Create a react component passing the correct arguments as props:
-    // <MessageBoxComponent isUserMessage = 'true' isEchoMessage = 'false' message = 'test'>
+export default MessageBoxComponent; 
