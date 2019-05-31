@@ -4,8 +4,8 @@ import React from 'react';
 
 class MessageBoxComponent extends React.Component {
 
-    date = new Date();
-    timestampString = this.date.toString();
+    // date = new Date();
+    // timestampString = this.date.toString();
     messageString = '';
 
     componentDidMount(){
@@ -43,7 +43,7 @@ class MessageBoxComponent extends React.Component {
 
 		return(
             <div style = {messageBoxStyle}>
-                Sent on {this.timestampString}
+                Sent on {this.props.timeStamp}
                 <p>{this.messageString}</p>
             </div>
 		)

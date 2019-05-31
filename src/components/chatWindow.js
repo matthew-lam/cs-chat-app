@@ -9,7 +9,7 @@ const chatWindowStyle = {
 }
 
 const messageWindowStyle = {
-    // Height is '70vh' here because headerBar component is 20, textBox is 10, and so messageWindow should fill the remaining 'percentage' of viewport height/
+    // Height is '70vh' here because headerBar component is 20, textBox is 10, and so messageWindow should fill the remaining 'percentage' of viewport height/  
     flex: '80%',
     height: '70vh',
     backgroundColor: 'white',
@@ -25,8 +25,12 @@ const textBoxStyle = {
 }
 
 class ChatWindow extends React.Component {
-	render() {
+
+    componentWillUpdate(){
         console.log('updated'); // This doesn't update when select chat is called for some reason.
+    }
+
+	render() {        
         return( 
             <React.Fragment>
                 <div style = {chatWindowStyle}>
@@ -34,7 +38,7 @@ class ChatWindow extends React.Component {
                         <div style = {messageWindowStyle}>
                             {
                                 this.props.chats.chats.length > 0 ? 
-                                (this.props.chats.chats[this.props.selectedChatId].messageIds.map((message, i) => <MessageBoxComponent isUserMessage = {this.props.chats.messages[this.props.chats.chats[this.props.selectedChatId].messageIds[i]].isUserMessage} message = {this.props.chats.messages[this.props.chats.chats[this.props.selectedChatId].messageIds[i]].text} key = {i}/>)) 
+                                (this.props.chats.chats[this.props.selectedChatId].messageIds.map((message, i) => <MessageBoxComponent isUserMessage = {this.props.chats.messages[message].isUserMessage} message = {this.props.chats.messages[message].text} timeStamp = {this.props.chats.messages[message].timeStamp} key = {i}/>))
                                 : null
                             }
                         </div>
@@ -49,4 +53,3 @@ class ChatWindow extends React.Component {
 }
 
 export default ChatWindow;
-

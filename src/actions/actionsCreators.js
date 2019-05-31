@@ -1,21 +1,24 @@
 
-export const addMessage = (text, selectedChatId) => ({
+export const addMessage = (text, selectedChatId, timeStamp) => ({
     type: 'ADD_MESSAGE',
     selectedChatId: selectedChatId,
     isUserMessage: 'true',
-    text
+    text,
+    timeStamp: timeStamp
 })
 
-export const echoMessage = text => ({
+export const echoMessage = (text, timeStamp) => ({
     type: 'ECHO_MESSAGE',
     isUserMessage: 'false',
-    text
+    text,
+    timeStamp: timeStamp
 })
 
-export const initMessage = (selectedChatId) => ({
+export const initMessage = (selectedChatId, timeStamp) => ({
     type: 'INIT_MESSAGE',
     selectedChatId: selectedChatId,
     isUserMessage: 'false',
+    timeStamp: timeStamp
 })
 
 export const spawnChat = () => ({
@@ -23,10 +26,10 @@ export const spawnChat = () => ({
     }   
 )
 
-export function addChatSession(selectedChatId) {
+export function addChatSession(selectedChatId, timeStamp) {
     return dispatch => {
         dispatch(spawnChat());
-        dispatch(initMessage(selectedChatId));
+        dispatch(initMessage(selectedChatId, timeStamp));
     }
 }
 

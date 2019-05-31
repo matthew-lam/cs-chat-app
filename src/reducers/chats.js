@@ -33,7 +33,8 @@ const chats = (state = initialState, action) => {
                     {
                         message_id: state.nextMessageId,
                         isUserMessage: 'false',
-                        text: 'Welcome to the chat.'
+                        text: 'Welcome to the chat.',
+                        timeStamp: action.timeStamp
                     }
                 ],
                 nextMessageId: state.nextMessageId + 1
@@ -50,7 +51,8 @@ const chats = (state = initialState, action) => {
                     {
                         message_id: state.nextMessageId,
                         isUserMessage: 'true',
-                        text: action.text
+                        text: action.text,
+                        timeStamp: action.timeStamp
                     }
                 ],
                 nextMessageId: state.nextMessageId + 1
@@ -67,7 +69,8 @@ const chats = (state = initialState, action) => {
                     {
                         message_id: state.nextMessageId,
                         isUserMessage: 'false',
-                        text: action.text
+                        text: action.text,
+                        timeStamp: action.timeStamp
                     }
                 ],
                 nextMessageId: state.nextMessageId + 1
