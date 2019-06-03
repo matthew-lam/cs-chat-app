@@ -4,10 +4,10 @@ import * as actionCreators from '../actions/actionsCreators';
 import chatHistoryDelete from '../components/chatHistoryDelete';
 
 function mapStateToProps(state) {
-    return {
+	return {
 		chats: state.chats
 	}
-} 
+}
 
 function mapDispatchProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch)

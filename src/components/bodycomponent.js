@@ -16,17 +16,17 @@ class BodyComponent extends React.Component {
     // Body component is the intermediary component that contains the chat history (left pane)
     //  and the chat window (right pane)
 
-	render() {
-		return(
+    render() {
+        return (
             <React.Fragment>
-                <div style = {chatComponentStyle}>
-                    <ChatHistory/>
-                    <ChatWindow/>
+                <div style={chatComponentStyle}>
+                    <ChatHistory />
+                    <ChatWindow />
                 </div>
             </React.Fragment>
-		)
+        )
 
-	}
+    }
 
 }
 

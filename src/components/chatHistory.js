@@ -12,15 +12,15 @@ const chatHistoryStyle = {
 
 class ChatHistory extends React.Component {
 
-	render() {
-		return(
+    render() {
+        return (
             <React.Fragment>
-                <div style = {chatHistoryStyle}>
-                    {this.props.chats.chats.map((message, i) => <ChatHistoryBox id = {message.chatID} text = {this.props.chats.messages[message.messageIds[message.messageIds.length-1]].text} key = {i}/>)}
+                <div style={chatHistoryStyle}>
+                    {this.props.chats.chats.map((message, i) => <ChatHistoryBox id={message.chatID} text={this.props.chats.messages[message.messageIds[message.messageIds.length - 1]].text} key={i} />)}
                 </div>
             </React.Fragment>
-		)
-	}
+        )
+    }
 }
 
 export default ChatHistory

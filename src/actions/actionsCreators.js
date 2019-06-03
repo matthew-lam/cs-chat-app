@@ -22,8 +22,8 @@ export const initMessage = (selectedChatId, timeStamp) => ({
 })
 
 export const spawnChat = () => ({
-        type: 'SPAWN_CHAT',
-    }   
+    type: 'SPAWN_CHAT',
+}
 )
 
 export function addChatSession(selectedChatId, timeStamp) {

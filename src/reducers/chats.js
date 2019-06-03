@@ -76,9 +76,12 @@ const chats = (state = initialState, action) => {
                 nextMessageId: state.nextMessageId + 1
             }
         case 'DELETE_CHAT':
-            // Need to revisit this.
             console.log('properly connected and stuff : ' + action.selectedChatId)
             return state
+        // let deletedChatState = {}
+        // Object.assign(deletedChatState, state)
+        // deletedChatState.pop()
+        // return deletedChatState
         case 'SELECT_CHAT':
             let mutatedState = {}
             Object.assign(mutatedState, state)
@@ -86,7 +89,6 @@ const chats = (state = initialState, action) => {
             console.log('Selected chat: ' + action.selectedChat)
             return mutatedState
         default:
-            // This won't actually update the component.
             return state
     }
 }

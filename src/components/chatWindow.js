@@ -15,7 +15,7 @@ const messageWindowStyle = {
     backgroundColor: 'white',
     padding: '5px',
     paddingLeft: '15px',
-    overflowY: 'scroll',   
+    overflowY: 'scroll',
 }
 
 const textBoxStyle = {
@@ -26,30 +26,30 @@ const textBoxStyle = {
 
 class ChatWindow extends React.Component {
 
-    componentWillUpdate(){
+    componentWillUpdate() {
         console.log('updated'); // This doesn't update when select chat is called for some reason.
     }
 
-	render() {        
-        return( 
+    render() {
+        return (
             <React.Fragment>
-                <div style = {chatWindowStyle}>
+                <div style={chatWindowStyle}>
                     <React.Fragment>
-                        <div style = {messageWindowStyle}>
+                        <div style={messageWindowStyle}>
                             {
-                                this.props.chats.chats.length > 0 ? 
-                                (this.props.chats.chats[this.props.selectedChatId].messageIds.map((message, i) => <MessageBoxComponent isUserMessage = {this.props.chats.messages[message].isUserMessage} message = {this.props.chats.messages[message].text} timeStamp = {this.props.chats.messages[message].timeStamp} key = {i}/>))
-                                : null
+                                this.props.chats.chats.length > 0 ?
+                                    (this.props.chats.chats[this.props.selectedChatId].messageIds.map((message, i) => <MessageBoxComponent isUserMessage={this.props.chats.messages[message].isUserMessage} message={this.props.chats.messages[message].text} timeStamp={this.props.chats.messages[message].timeStamp} key={i} />))
+                                    : null
                             }
                         </div>
-                        <div style = {textBoxStyle}>
-                            <TextBoxInput/>
+                        <div style={textBoxStyle}>
+                            <TextBoxInput />
                         </div>
                     </React.Fragment>
                 </div>
             </React.Fragment>
-		)
-	}
+        )
+    }
 }
 
 export default ChatWindow;

@@ -4,11 +4,11 @@ import React from 'react';
 
 class MessageBoxComponent extends React.Component {
 
-	render() {
+    render() {
         // Hacky CSS because I'm not sure how to do it better. :(
 
         var messageBoxStyle = {
-            borderStyle : 'solid',
+            borderStyle: 'solid',
             borderColor: 'black',
             borderWidth: '2px',
             padding: '5px',
@@ -19,20 +19,20 @@ class MessageBoxComponent extends React.Component {
             fontSize: 'small',
         }
 
-        if(this.props.isUserMessage === 'true'){
-            messageBoxStyle = Object.assign({}, messageBoxStyle, {marginLeft: '60%'})
+        if (this.props.isUserMessage === 'true') {
+            messageBoxStyle = Object.assign({}, messageBoxStyle, { marginLeft: '60%' })
         }
-        else{
-            messageBoxStyle = Object.assign({}, messageBoxStyle, {display: 'table'})
+        else {
+            messageBoxStyle = Object.assign({}, messageBoxStyle, { display: 'table' })
         }
 
-		return(
-            <div style = {messageBoxStyle}>
+        return (
+            <div style={messageBoxStyle}>
                 Sent on {this.props.timeStamp}
                 <p>{(this.props.isEchoMessage === 'true' ? ('You said: ' + this.props.message) : this.props.message)}</p>
             </div>
-		)
-	}
+        )
+    }
 }
 
 export default MessageBoxComponent; 

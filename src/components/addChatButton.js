@@ -21,8 +21,8 @@ class AddChatButton extends React.Component {
 
     render() {
         // TODO: complete rendering function.
-        return (       
-            <button onClick = {this.addChatSessionOnClick} style = {{fontSize: 'medium', borderRadius: '5px', padding: "5px 5px"}}>
+        return (
+            <button onClick={this.addChatSessionOnClick} style={{ fontSize: 'medium', borderRadius: '5px', padding: "5px 5px" }}>
                 Add chat
             </button>
         )

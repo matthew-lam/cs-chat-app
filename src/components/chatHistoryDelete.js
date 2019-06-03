@@ -11,7 +11,7 @@ class ChatHistoryDelete extends React.Component {
 
     render() {
         return (
-            <button style = {deleteButtonStyle} id = {this.props.id} onClick = {() => this.props.deleteChat(this.props.id)}>
+            <button style={deleteButtonStyle} id={this.props.id} onClick={() => this.props.deleteChat(this.props.id)}>
                 <p>X</p>
             </button>
         )

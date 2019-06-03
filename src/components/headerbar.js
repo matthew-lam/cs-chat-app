@@ -27,13 +27,13 @@ class HeaderBar extends React.Component {
 
     render() {
         // TODO: complete rendering function.
-        return(
+        return (
 
-                <div style = {divStyle}> 
-                <h1 style = {textPaddingStyle}> An awesome chat app </h1> 
-                 <AddChatButton style = {buttonStyling}/> 
-                 </div>
-            
+            <div style={divStyle}>
+                <h1 style={textPaddingStyle}> An awesome chat app </h1>
+                <AddChatButton style={buttonStyling} />
+            </div>
+
         )
     }
 

@@ -24,18 +24,18 @@ const buttonStyle = {
 
 class ChatHistoryBox extends React.Component {
     // this.props.id is from the props supplied by a parent react component that calls it. (chatHistory.js)
-	render() {
-		return(  
+    render() {
+        return (
             <React.Fragment>
-                <div style = {chatHistoryBoxStyle}>
-                    <button style = {buttonStyle}  id = {this.props.id} onClick = {() => this.props.selectChat(this.props.id)}>
+                <div style={chatHistoryBoxStyle}>
+                    <button style={buttonStyle} id={this.props.id} onClick={() => this.props.selectChat(this.props.id)}>
                         <p>{this.props.text}</p>
                     </button>
-                    <ChatHistoryDelete id = {this.props.id}/>
+                    <ChatHistoryDelete id={this.props.id} />
                 </div>
             </React.Fragment>
-		)
-	}
+        )
+    }
 }
 
 export default ChatHistoryBox;

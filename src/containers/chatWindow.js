@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../actions/actionsCreators';
 import ChatWindow from '../components/chatWindow';
 
-function mapStateToProps(state) {	
+function mapStateToProps(state) {
 	return {
-			chats: state.chats,
-			selectedChatId: state.chats.selectedChatId,
-			messages: state.chats.messages
+		chats: state.chats,
+		selectedChatId: state.chats.selectedChatId,
+		messages: state.chats.messages
 	}
-} 
+}
 
 function mapDispatchProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch)
